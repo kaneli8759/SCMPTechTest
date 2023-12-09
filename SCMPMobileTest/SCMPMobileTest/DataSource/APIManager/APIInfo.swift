@@ -20,7 +20,7 @@ extension APIInfo {
         case .login:
             return baseUrl + "/login?delay=5"
         case .getStaffList:
-            return baseUrl + "users?page="
+            return baseUrl + "/users?page="
         }
     }
 }
