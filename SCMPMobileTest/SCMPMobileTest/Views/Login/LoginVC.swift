@@ -46,28 +46,34 @@ class LoginVC: UIViewController {
 // MARK: - loginView delegate
 extension LoginVC: LoginViewDelegate {
     func didClickLoginButton(email: String, password: String) {
-        guard !email.isEmpty, !password.isEmpty else {
-            showAlert(message: "Please enter both email and password.")
-            return
-        }
+//        guard !email.isEmpty, !password.isEmpty else {
+//            self.loginView.loadingIndicator.stopAnimating()
+//            showAlert(message: "Please enter both email and password.")
+//            return
+//        }
+//
+//        guard isValidEmail(email) else {
+//            self.loginView.loadingIndicator.stopAnimating()
+//            showAlert(message: "Please enter a valid email address.")
+//            return
+//        }
+//        
+//        guard isValidPassword(password) else {
+//            self.loginView.loadingIndicator.stopAnimating()
+//            showAlert(message: "Password should be 6-10 characters and contain only letters and numbers.")
+//            return
+//        }
         
-        guard isValidEmail(email) else {
-            showAlert(message: "Please enter a valid email address.")
-            return
-        }
-        
-        guard isValidPassword(password) else {
-            showAlert(message: "Password should be 6-10 characters and contain only letters and numbers.")
-            return
-        }
-        
-        self.viewModel.login(email: email, password: password) { result in
+        self.viewModel.login(email: "eve.holt@reqres.in", password: "cityslicka") { result in
             DispatchQueue.main.async {
                 self.loginView.loadingIndicator.stopAnimating()
             }
             switch result {
             case .success(let token):
-                print("login success, token => \(token)")
+                DispatchQueue.main.async {
+                    let vc = StaffListVC(token: token)
+                    self.navigationController?.pushViewController(vc, animated: true)
+                }
             case .failure(let error):
                 switch error {
                 case .custom(let errorMsg):

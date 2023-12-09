@@ -88,11 +88,11 @@ class LoginView: UIView {
         self.backgroundColor = UIColor("#bbdefb")
         let stackView = self.mainStackView()
         self.addSubview(stackView)
+        self.addSubview(self.loadingIndicator)
         stackView.anchor(width: self.frame.width - 60)
         stackView.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
         stackView.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
         self.loginButton.addTarget(self, action: #selector(didClickLoginButton), for: .touchUpInside)
-        self.addSubview(self.loadingIndicator)
         self.loadingIndicator.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
         self.loadingIndicator.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
     }

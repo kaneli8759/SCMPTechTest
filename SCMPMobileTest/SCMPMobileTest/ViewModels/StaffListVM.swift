@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+class StaffListVM {
+    func getStaffList(pageNumber: String, completion: @escaping(Result<StaffListResponse, APIError>) -> Void) {
+        APIManager.shared.getStaffList(pageNumber: pageNumber, completion: completion)
+    }
+}

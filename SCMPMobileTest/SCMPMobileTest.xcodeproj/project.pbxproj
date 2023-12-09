@@ -22,6 +22,8 @@
 		761CF75E2B24C60900FF9989 /* StaffListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761CF75D2B24C60900FF9989 /* StaffListView.swift */; };
 		761CF7602B24C62100FF9989 /* StaffListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761CF75F2B24C62100FF9989 /* StaffListVC.swift */; };
 		761CF7622B24C63300FF9989 /* StaffListVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761CF7612B24C63300FF9989 /* StaffListVM.swift */; };
+		761CF7642B24D1A000FF9989 /* StaffListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761CF7632B24D1A000FF9989 /* StaffListResponse.swift */; };
+		761CF7662B25191300FF9989 /* StaffCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761CF7652B25191300FF9989 /* StaffCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +44,8 @@
 		761CF75D2B24C60900FF9989 /* StaffListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaffListView.swift; sourceTree = "<group>"; };
 		761CF75F2B24C62100FF9989 /* StaffListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaffListVC.swift; sourceTree = "<group>"; };
 		761CF7612B24C63300FF9989 /* StaffListVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaffListVM.swift; sourceTree = "<group>"; };
+		761CF7632B24D1A000FF9989 /* StaffListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StaffListResponse.swift; path = ../../../../../../Documents/StaffListResponse.swift; sourceTree = "<group>"; };
+		761CF7652B25191300FF9989 /* StaffCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StaffCell.swift; path = ../../../../../../Documents/StaffCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				761CF7542B24664900FF9989 /* LoginResponse.swift */,
+				761CF7632B24D1A000FF9989 /* StaffListResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -154,6 +159,7 @@
 			children = (
 				761CF75D2B24C60900FF9989 /* StaffListView.swift */,
 				761CF75F2B24C62100FF9989 /* StaffListVC.swift */,
+				761CF7652B25191300FF9989 /* StaffCell.swift */,
 			);
 			path = StaffList;
 			sourceTree = "<group>";
@@ -229,8 +235,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				761CF75E2B24C60900FF9989 /* StaffListView.swift in Sources */,
+				761CF7642B24D1A000FF9989 /* StaffListResponse.swift in Sources */,
 				761CF7452B24397600FF9989 /* Extensions+UIColor.swift in Sources */,
 				761CF7292B242E0600FF9989 /* AppDelegate.swift in Sources */,
+				761CF7662B25191300FF9989 /* StaffCell.swift in Sources */,
 				761CF7622B24C63300FF9989 /* StaffListVM.swift in Sources */,
 				761CF7432B24372300FF9989 /* Extensions+UIView.swift in Sources */,
 				761CF73D2B242E4B00FF9989 /* LoginVC.swift in Sources */,

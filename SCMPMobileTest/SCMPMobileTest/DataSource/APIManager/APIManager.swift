@@ -13,7 +13,7 @@ enum APIError: Error {
     case invalidData
     case decodingError
     case custom(String)
-
+    
     var localizedDescription: String {
         switch self {
         case .invalidURL:
@@ -32,9 +32,9 @@ enum APIError: Error {
 
 class APIManager {
     static let shared = APIManager()
-
+    
     private init() {}
-
+    
     func login(email: String, password: String, completion: @escaping(Result<String, APIError>)-> Void) {
         guard let url = URL(string: APIInfo.login.path) else {
             completion(.failure(APIError.invalidURL))
@@ -43,31 +43,31 @@ class APIManager {
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.addValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
-
+        
         var components = URLComponents()
         components.queryItems = [
             URLQueryItem(name: "email", value: email),
             URLQueryItem(name: "password", value: password)
         ]
-
+        
         request.httpBody = components.percentEncodedQuery?.data(using: .utf8)
-
+        
         URLSession.shared.dataTask(with: request) { (data, response, error) in
             if error != nil {
                 completion(.failure(APIError.requestFailed))
                 return
             }
-
+            
             guard let httpResponse = response as? HTTPURLResponse else {
                 completion(.failure(APIError.invalidData))
                 return
             }
-
+            
             guard let data = data else {
                 completion(.failure(APIError.invalidData))
                 return
             }
-
+            
             if httpResponse.statusCode == 200 {
                 do {
                     let json = try JSONSerialization.jsonObject(with: data) as? [String: Any]
@@ -92,9 +92,55 @@ class APIManager {
                 }
             }
         }.resume()
-
-
     }
-
-
+    
+    func getStaffList(pageNumber: String, completion: @escaping(Result<StaffListResponse, APIError>) -> Void) {
+        guard let url = URL(string: APIInfo.getStaffList.path + pageNumber) else {
+            completion(.failure(APIError.invalidURL))
+            return
+        }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        request.addValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+        
+        URLSession.shared.dataTask(with: request) { (data, response, error) in
+            if error != nil {
+                completion(.failure(APIError.requestFailed))
+                return
+            }
+            
+            guard let httpResponse = response as? HTTPURLResponse else {
+                completion(.failure(APIError.invalidData))
+                return
+            }
+            
+            guard let data = data else {
+                completion(.failure(APIError.invalidData))
+                return
+            }
+            
+            if httpResponse.statusCode == 200 {
+                do {
+                    let decoder = JSONDecoder()
+                    let staffList = try decoder.decode(StaffListResponse.self, from: data)
+                    completion(.success(staffList))
+                }catch {
+                    completion(.failure(APIError.decodingError))
+                }
+            }else {
+                do {
+                    let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
+                    if let errorMessage = json?["error"] as? String {
+                        completion(.failure(APIError.custom(errorMessage)))
+                    } else {
+                        completion(.failure(APIError.requestFailed))
+                    }
+                }catch {
+                    completion(.failure(APIError.decodingError))
+                }
+            }
+        }.resume()
+    }
+    
 }
