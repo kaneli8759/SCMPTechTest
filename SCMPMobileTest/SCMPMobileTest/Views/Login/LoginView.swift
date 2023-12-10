@@ -13,6 +13,7 @@ protocol LoginViewDelegate: AnyObject {
 
 class LoginView: UIView {
     var delegate: LoginViewDelegate?
+    private var isShowPassword: Bool = false
     
     private let titleLabel: UILabel = {
         let lb = UILabel()
@@ -40,8 +41,19 @@ class LoginView: UIView {
         tf.borderStyle = .roundedRect
         tf.layer.cornerRadius = 5
         tf.translatesAutoresizingMaskIntoConstraints = false
+        tf.rightViewMode = .always
         tf.anchor(height: 40)
         return tf
+    }()
+    
+    private let eyeButton: UIButton = {
+        let btn = UIButton(type: .custom)
+        btn.setImage(UIImage(systemName: "eye.fill"), for: .normal)
+        btn.tintColor = .black
+        btn.translatesAutoresizingMaskIntoConstraints = false
+        btn.isUserInteractionEnabled = true
+        btn.anchor(width: 50)
+        return btn
     }()
     
     private let loginButton: UIButton = {
@@ -90,12 +102,16 @@ class LoginView: UIView {
         let stackView = self.mainStackView()
         self.addSubview(stackView)
         self.addSubview(self.loadingIndicator)
+        self.passwordTextField.addSubview(self.eyeButton)
+        self.passwordTextField.rightView = self.eyeButton
         stackView.anchor(width: self.frame.width - 60)
         stackView.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
         stackView.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
         self.loginButton.addTarget(self, action: #selector(didClickLoginButton), for: .touchUpInside)
         self.loadingIndicator.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
         self.loadingIndicator.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: -10).isActive = true
+        self.eyeButton.centerYAnchor.constraint(equalTo: self.passwordTextField.centerYAnchor).isActive = true
+        self.eyeButton.addTarget(self, action: #selector(didClickShowPassword), for: .touchUpInside)
     }
     
     func showLoading(status: Bool) {
@@ -115,6 +131,13 @@ class LoginView: UIView {
         guard let email = emailTextfiled.text, let password = passwordTextField.text else {return}
         self.showLoading(status: true)
         self.delegate?.didClickLoginButton(email: email, password: password)
+    }
+    
+    @objc private func didClickShowPassword() {
+        self.isShowPassword = !self.isShowPassword
+        let imageStr = self.isShowPassword ? "eye.slash.fill" : "eye.fill"
+        self.eyeButton.setImage(UIImage(systemName: imageStr), for: .normal)
+        self.passwordTextField.isSecureTextEntry = !self.isShowPassword
     }
     
 }
