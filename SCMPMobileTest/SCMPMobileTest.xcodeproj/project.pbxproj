@@ -24,6 +24,7 @@
 		761CF7622B24C63300FF9989 /* StaffListVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761CF7612B24C63300FF9989 /* StaffListVM.swift */; };
 		761CF7642B24D1A000FF9989 /* StaffListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761CF7632B24D1A000FF9989 /* StaffListResponse.swift */; };
 		761CF7662B25191300FF9989 /* StaffCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761CF7652B25191300FF9989 /* StaffCell.swift */; };
+		761CF76C2B2556C000FF9989 /* LoadMoreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761CF76B2B2556C000FF9989 /* LoadMoreCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		761CF7612B24C63300FF9989 /* StaffListVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaffListVM.swift; sourceTree = "<group>"; };
 		761CF7632B24D1A000FF9989 /* StaffListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StaffListResponse.swift; path = ../../../../../../Documents/StaffListResponse.swift; sourceTree = "<group>"; };
 		761CF7652B25191300FF9989 /* StaffCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StaffCell.swift; path = ../../../../../../Documents/StaffCell.swift; sourceTree = "<group>"; };
+		761CF76B2B2556C000FF9989 /* LoadMoreCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoadMoreCell.swift; path = ../../../../../../Documents/LoadMoreCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +162,7 @@
 				761CF75D2B24C60900FF9989 /* StaffListView.swift */,
 				761CF75F2B24C62100FF9989 /* StaffListVC.swift */,
 				761CF7652B25191300FF9989 /* StaffCell.swift */,
+				761CF76B2B2556C000FF9989 /* LoadMoreCell.swift */,
 			);
 			path = StaffList;
 			sourceTree = "<group>";
@@ -234,6 +237,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				761CF76C2B2556C000FF9989 /* LoadMoreCell.swift in Sources */,
 				761CF75E2B24C60900FF9989 /* StaffListView.swift in Sources */,
 				761CF7642B24D1A000FF9989 /* StaffListResponse.swift in Sources */,
 				761CF7452B24397600FF9989 /* Extensions+UIColor.swift in Sources */,

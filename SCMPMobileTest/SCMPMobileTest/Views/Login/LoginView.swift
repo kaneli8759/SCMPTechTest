@@ -14,7 +14,7 @@ protocol LoginViewDelegate: AnyObject {
 class LoginView: UIView {
     var delegate: LoginViewDelegate?
     
-    let titleLabel: UILabel = {
+    private let titleLabel: UILabel = {
         let lb = UILabel()
         lb.text = "SCMPMobileTest"
         lb.font = UIFont.boldSystemFont(ofSize: 30)
@@ -22,29 +22,29 @@ class LoginView: UIView {
         lb.translatesAutoresizingMaskIntoConstraints = false
         return lb
     }()
-    let emailTextfiled: UITextField = {
+    private let emailTextfiled: UITextField = {
         let tf = UITextField()
         tf.placeholder = "Please Input Your Email"
         tf.keyboardType = .emailAddress
         tf.borderStyle = .roundedRect
         tf.layer.cornerRadius = 5
         tf.translatesAutoresizingMaskIntoConstraints = false
-        tf.anchor(width:0, height: 40)
+        tf.anchor(height: 40)
         return tf
     }()
     
-    let passwordTextField: UITextField = {
+    private let passwordTextField: UITextField = {
         let tf = UITextField()
         tf.placeholder = "Please Input Your Password"
         tf.isSecureTextEntry = true
         tf.borderStyle = .roundedRect
         tf.layer.cornerRadius = 5
         tf.translatesAutoresizingMaskIntoConstraints = false
-        tf.anchor(width:0, height: 40)
+        tf.anchor(height: 40)
         return tf
     }()
     
-    let loginButton: UIButton = {
+    private let loginButton: UIButton = {
         let btn = UIButton(type: .custom)
         btn.setTitle("Login", for: .normal)
         btn.layer.cornerRadius = 5
@@ -52,7 +52,7 @@ class LoginView: UIView {
         btn.layer.borderColor = UIColor("#637bfe").cgColor
         btn.backgroundColor = UIColor("#2a3eb1")
         btn.translatesAutoresizingMaskIntoConstraints = false
-        btn.anchor(width: 0, height: 50)
+        btn.anchor(height: 50)
         return btn
     }()
     
@@ -64,7 +64,7 @@ class LoginView: UIView {
         return indicator
     }()
     
-    func mainStackView() -> UIStackView {
+    private func mainStackView() -> UIStackView {
         let stackView = UIStackView(arrangedSubviews: [titleLabel,
                                                        emailTextfiled,
                                                        passwordTextField,

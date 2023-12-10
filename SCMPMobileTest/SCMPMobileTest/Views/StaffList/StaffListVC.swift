@@ -13,6 +13,7 @@ class StaffListVC: UIViewController {
     private var viewModel: StaffListVM!
     private var pageNumber: Int = 1
     private var staffListView: StaffListView!
+    private var staffList = [Staff]()
     
     init(token: String) {
         self.token = token
@@ -33,18 +34,36 @@ class StaffListVC: UIViewController {
     private func setupView() {
         self.navigationController?.setNavigationBarHidden(true, animated: false)
         self.staffListView = StaffListView(frame: self.view.frame, token: self.token)
+        self.staffListView.delegate = self
         self.view.addSubview(staffListView)
     }
     
     
-    func fetchData(_ pageNumber: Int) {
+    private func fetchData(_ pageNumber: Int) {
         viewModel.getStaffList(pageNumber: "\(pageNumber)") { result in
             switch result {
             case .success(let list):
-                self.staffListView.setData(stafflist: list)
+                self.pageNumber = list.page
+                self.staffList.append(contentsOf: list.data)
+                self.staffListView.setStaffList(list: self.staffList, isLastPage: list.page == list.totalPages)
             case .failure(let error):
                 print(error.localizedDescription)
             }
+            
         }
+    }
+    
+    private func updateStaffList() {
+        self.fetchData(self.pageNumber + 1)
+    }
+}
+
+extension StaffListVC: StaffListViewDelegate {
+    func didClickLoadMore() {
+        self.updateStaffList()
+    }
+    
+    func refreshTableView() {
+        self.staffListView.refreshTableView()
     }
 }
