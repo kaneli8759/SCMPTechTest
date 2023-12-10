@@ -58,9 +58,9 @@ class LoginView: UIView {
     
     let loadingIndicator: UIActivityIndicatorView = {
         let indicator = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.large)
-        indicator.backgroundColor = UIColor("#FFFFFF")
         indicator.hidesWhenStopped = true
         indicator.translatesAutoresizingMaskIntoConstraints = false
+        indicator.transform = CGAffineTransform.init(scaleX: 1.5, y: 1.5)
         return indicator
     }()
     
@@ -84,7 +84,7 @@ class LoginView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setup() {
+    private func setup() {
         self.backgroundColor = UIColor("#bbdefb")
         let stackView = self.mainStackView()
         self.addSubview(stackView)
@@ -94,13 +94,20 @@ class LoginView: UIView {
         stackView.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
         self.loginButton.addTarget(self, action: #selector(didClickLoginButton), for: .touchUpInside)
         self.loadingIndicator.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
-        self.loadingIndicator.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
+        self.loadingIndicator.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: -10).isActive = true
     }
     
+    func showLoading(status: Bool) {
+        if (status) {
+            self.loadingIndicator.startAnimating()
+        }else {
+            self.loadingIndicator.stopAnimating()
+        }
+    }
     
     @objc private func didClickLoginButton() {
         guard let email = emailTextfiled.text, let password = passwordTextField.text else {return}
-        self.loadingIndicator.startAnimating()
+        self.showLoading(status: true)
         self.delegate?.didClickLoginButton(email: email, password: password)
     }
     

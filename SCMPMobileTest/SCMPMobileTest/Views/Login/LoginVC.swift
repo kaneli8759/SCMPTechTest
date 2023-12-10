@@ -27,7 +27,14 @@ class LoginVC: UIViewController {
     }
     
     private func showAlert(message: String) {
-        let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+        let alert = UIAlertController(title: "", message: "", preferredStyle: .alert)
+        let titleFont = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 18, weight: .bold)]
+        let messageFont = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14, weight: .medium)]
+        let titleAttrString = NSMutableAttributedString(string: "Error", attributes: titleFont)
+        let messageAttrString = NSMutableAttributedString(string: message, attributes: messageFont)
+
+        alert.setValue(titleAttrString, forKey: "attributedTitle")
+        alert.setValue(messageAttrString, forKey: "attributedMessage")
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         present(alert, animated: true, completion: nil)
     }
@@ -46,27 +53,27 @@ class LoginVC: UIViewController {
 // MARK: - loginView delegate
 extension LoginVC: LoginViewDelegate {
     func didClickLoginButton(email: String, password: String) {
-//        guard !email.isEmpty, !password.isEmpty else {
-//            self.loginView.loadingIndicator.stopAnimating()
-//            showAlert(message: "Please enter both email and password.")
-//            return
-//        }
+        guard !email.isEmpty, !password.isEmpty else {
+            self.loginView.showLoading(status: false)
+            showAlert(message: "Please enter both email and password.")
+            return
+        }
 //
 //        guard isValidEmail(email) else {
-//            self.loginView.loadingIndicator.stopAnimating()
+//            self.loginView.showLoading(status: false)
 //            showAlert(message: "Please enter a valid email address.")
 //            return
 //        }
 //        
 //        guard isValidPassword(password) else {
-//            self.loginView.loadingIndicator.stopAnimating()
+//            self.loginView.showLoading(status: false)
 //            showAlert(message: "Password should be 6-10 characters and contain only letters and numbers.")
 //            return
 //        }
         
         self.viewModel.login(email: "eve.holt@reqres.in", password: "cityslicka") { result in
             DispatchQueue.main.async {
-                self.loginView.loadingIndicator.stopAnimating()
+                self.loginView.showLoading(status: false)
             }
             switch result {
             case .success(let token):
