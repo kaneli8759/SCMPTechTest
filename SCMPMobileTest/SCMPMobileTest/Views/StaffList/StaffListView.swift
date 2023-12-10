@@ -26,7 +26,7 @@ class StaffListView: UIView {
         return lb
     }()
     
-    let tableView: UITableView = {
+    private let tableView: UITableView = {
         let tv =  UITableView()
         tv.backgroundColor = .clear
         tv.bounces = false
@@ -97,11 +97,12 @@ extension StaffListView: UITableViewDelegate, UITableViewDataSource {
         if !self.isLastPage && indexPath.row == self.staffList.count {
             return 80
         }
-        return 120
+        return 110
     }
     
 }
 
+// MARK: - loadMoreCell delegate
 extension StaffListView: LoadMoreCellDelegate {
     func didClickLoadMore() {
         self.delegate?.didClickLoadMore()

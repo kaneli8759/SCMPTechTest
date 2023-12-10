@@ -33,7 +33,7 @@ enum APIError: Error {
 class APIManager {
     static let shared = APIManager()
     
-    private init() {}
+    init() {}
     
     func login(email: String, password: String, completion: @escaping(Result<String, APIError>)-> Void) {
         guard let url = URL(string: APIInfo.login.path) else {
@@ -143,4 +143,43 @@ class APIManager {
         }.resume()
     }
     
+}
+
+class MockAPIManager: APIManager {
+    var loginCalled = false
+    var getStaffListCalled = false
+    var shouldSuccess = true
+    var mockError: APIError?
+    var mockToken: String?
+    var mockStaffList: StaffListResponse?
+    
+    override init() {
+        super.init()
+    }
+    
+    override func login(email: String, password: String, completion: @escaping (Result<String, APIError>) -> Void) {
+        loginCalled = true
+        
+        if shouldSuccess {
+            completion(.success(mockToken ?? ""))
+        }else {
+            completion(.failure(mockError ?? .custom("custom error")))
+        }
+    }
+    
+    override func getStaffList(pageNumber: String, completion: @escaping (Result<StaffListResponse, APIError>) -> Void) {
+            if shouldSuccess {
+                // 模擬取得 StaffList 成功
+                if let mockStaffList = mockStaffList {
+                    completion(.success(mockStaffList))
+                } else {
+                    // 如果沒有設定 mockStaffList，你可能需要自己建立一個合適的 StaffListResponse
+                    completion(.failure(.custom("")))
+                }
+            } else {
+                // 模擬取得 StaffList 失敗
+                completion(.failure(mockError ?? .custom("")))
+            }
+        }
+
 }

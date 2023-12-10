@@ -18,7 +18,7 @@ class LoginVC: UIViewController {
         self.setupView()
     }
     
-    func setupView() {
+    private func setupView() {
         let mainView = LoginView(frame: self.view.frame)
         self.loginView = mainView
         self.loginView.delegate = self
@@ -58,20 +58,20 @@ extension LoginVC: LoginViewDelegate {
             showAlert(message: "Please enter both email and password.")
             return
         }
-//
-//        guard isValidEmail(email) else {
-//            self.loginView.showLoading(status: false)
-//            showAlert(message: "Please enter a valid email address.")
-//            return
-//        }
-//        
-//        guard isValidPassword(password) else {
-//            self.loginView.showLoading(status: false)
-//            showAlert(message: "Password should be 6-10 characters and contain only letters and numbers.")
-//            return
-//        }
+
+        guard isValidEmail(email) else {
+            self.loginView.showLoading(status: false)
+            showAlert(message: "Please enter a valid email address.")
+            return
+        }
         
-        self.viewModel.login(email: "eve.holt@reqres.in", password: "cityslicka") { result in
+        guard isValidPassword(password) else {
+            self.loginView.showLoading(status: false)
+            showAlert(message: "Password should be 6-10 characters and contain only letters and numbers.")
+            return
+        }
+        
+        self.viewModel.login(email: email, password: password) { result in
             DispatchQueue.main.async {
                 self.loginView.showLoading(status: false)
             }
@@ -86,6 +86,7 @@ extension LoginVC: LoginViewDelegate {
                 case .custom(let errorMsg):
                     DispatchQueue.main.async {
                         self.showAlert(message: errorMsg)
+                        self.loginView.cleanTextField()
                     }
                 default:
                     print(error.localizedDescription)

@@ -47,6 +47,7 @@ class LoginView: UIView {
     private let loginButton: UIButton = {
         let btn = UIButton(type: .custom)
         btn.setTitle("Login", for: .normal)
+        btn.titleLabel?.font = .boldSystemFont(ofSize: 20)
         btn.layer.cornerRadius = 5
         btn.layer.borderWidth = 1
         btn.layer.borderColor = UIColor("#637bfe").cgColor
@@ -56,7 +57,7 @@ class LoginView: UIView {
         return btn
     }()
     
-    let loadingIndicator: UIActivityIndicatorView = {
+    private let loadingIndicator: UIActivityIndicatorView = {
         let indicator = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.large)
         indicator.hidesWhenStopped = true
         indicator.translatesAutoresizingMaskIntoConstraints = false
@@ -103,6 +104,11 @@ class LoginView: UIView {
         }else {
             self.loadingIndicator.stopAnimating()
         }
+    }
+    
+    func cleanTextField() {
+        self.emailTextfiled.text = ""
+        self.passwordTextField.text = ""
     }
     
     @objc private func didClickLoginButton() {

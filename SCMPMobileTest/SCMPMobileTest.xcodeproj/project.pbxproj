@@ -25,7 +25,19 @@
 		761CF7642B24D1A000FF9989 /* StaffListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761CF7632B24D1A000FF9989 /* StaffListResponse.swift */; };
 		761CF7662B25191300FF9989 /* StaffCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761CF7652B25191300FF9989 /* StaffCell.swift */; };
 		761CF76C2B2556C000FF9989 /* LoadMoreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761CF76B2B2556C000FF9989 /* LoadMoreCell.swift */; };
+		761CF77B2B25645700FF9989 /* LoginVMTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761CF77A2B25645700FF9989 /* LoginVMTests.swift */; };
+		761CF77E2B256D0A00FF9989 /* StaffListVMTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761CF77D2B256D0A00FF9989 /* StaffListVMTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		761CF7752B2563A100FF9989 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 761CF71D2B242E0500FF9989 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 761CF7242B242E0600FF9989;
+			remoteInfo = SCMPMobileTest;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		761CF7252B242E0600FF9989 /* SCMPMobileTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SCMPMobileTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -48,10 +60,20 @@
 		761CF7632B24D1A000FF9989 /* StaffListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StaffListResponse.swift; path = ../../../../../../Documents/StaffListResponse.swift; sourceTree = "<group>"; };
 		761CF7652B25191300FF9989 /* StaffCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StaffCell.swift; path = ../../../../../../Documents/StaffCell.swift; sourceTree = "<group>"; };
 		761CF76B2B2556C000FF9989 /* LoadMoreCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoadMoreCell.swift; path = ../../../../../../Documents/LoadMoreCell.swift; sourceTree = "<group>"; };
+		761CF7712B2563A100FF9989 /* SCMPMobileTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SCMPMobileTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		761CF77A2B25645700FF9989 /* LoginVMTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginVMTests.swift; path = ../../../../Documents/LoginVMTests.swift; sourceTree = "<group>"; };
+		761CF77D2B256D0A00FF9989 /* StaffListVMTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StaffListVMTests.swift; path = ../../../../Documents/StaffListVMTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		761CF7222B242E0600FF9989 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		761CF76E2B2563A100FF9989 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -65,6 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				761CF7272B242E0600FF9989 /* SCMPMobileTest */,
+				761CF7722B2563A100FF9989 /* SCMPMobileTestTests */,
 				761CF7262B242E0600FF9989 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -73,6 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				761CF7252B242E0600FF9989 /* SCMPMobileTest.app */,
+				761CF7712B2563A100FF9989 /* SCMPMobileTestTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -167,6 +191,15 @@
 			path = StaffList;
 			sourceTree = "<group>";
 		};
+		761CF7722B2563A100FF9989 /* SCMPMobileTestTests */ = {
+			isa = PBXGroup;
+			children = (
+				761CF77A2B25645700FF9989 /* LoginVMTests.swift */,
+				761CF77D2B256D0A00FF9989 /* StaffListVMTests.swift */,
+			);
+			path = SCMPMobileTestTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -187,6 +220,24 @@
 			productReference = 761CF7252B242E0600FF9989 /* SCMPMobileTest.app */;
 			productType = "com.apple.product-type.application";
 		};
+		761CF7702B2563A100FF9989 /* SCMPMobileTestTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 761CF7772B2563A100FF9989 /* Build configuration list for PBXNativeTarget "SCMPMobileTestTests" */;
+			buildPhases = (
+				761CF76D2B2563A100FF9989 /* Sources */,
+				761CF76E2B2563A100FF9989 /* Frameworks */,
+				761CF76F2B2563A100FF9989 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				761CF7762B2563A100FF9989 /* PBXTargetDependency */,
+			);
+			name = SCMPMobileTestTests;
+			productName = SCMPMobileTestTests;
+			productReference = 761CF7712B2563A100FF9989 /* SCMPMobileTestTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -199,6 +250,10 @@
 				TargetAttributes = {
 					761CF7242B242E0600FF9989 = {
 						CreatedOnToolsVersion = 14.3;
+					};
+					761CF7702B2563A100FF9989 = {
+						CreatedOnToolsVersion = 14.3;
+						TestTargetID = 761CF7242B242E0600FF9989;
 					};
 				};
 			};
@@ -216,6 +271,7 @@
 			projectRoot = "";
 			targets = (
 				761CF7242B242E0600FF9989 /* SCMPMobileTest */,
+				761CF7702B2563A100FF9989 /* SCMPMobileTestTests */,
 			);
 		};
 /* End PBXProject section */
@@ -227,6 +283,13 @@
 			files = (
 				761CF7352B242E0800FF9989 /* LaunchScreen.storyboard in Resources */,
 				761CF7322B242E0800FF9989 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		761CF76F2B2563A100FF9989 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,7 +319,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		761CF76D2B2563A100FF9989 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				761CF77B2B25645700FF9989 /* LoginVMTests.swift in Sources */,
+				761CF77E2B256D0A00FF9989 /* StaffListVMTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		761CF7762B2563A100FF9989 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 761CF7242B242E0600FF9989 /* SCMPMobileTest */;
+			targetProxy = 761CF7752B2563A100FF9989 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		761CF7332B242E0800FF9989 /* LaunchScreen.storyboard */ = {
@@ -438,6 +518,42 @@
 			};
 			name = Release;
 		};
+		761CF7782B2563A100FF9989 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2S2B9VPXL7;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.LiTusngCheng.SCMPMobileTestTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SCMPMobileTest.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SCMPMobileTest";
+			};
+			name = Debug;
+		};
+		761CF7792B2563A100FF9989 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2S2B9VPXL7;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.LiTusngCheng.SCMPMobileTestTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SCMPMobileTest.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SCMPMobileTest";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -455,6 +571,15 @@
 			buildConfigurations = (
 				761CF73A2B242E0800FF9989 /* Debug */,
 				761CF73B2B242E0800FF9989 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		761CF7772B2563A100FF9989 /* Build configuration list for PBXNativeTarget "SCMPMobileTestTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				761CF7782B2563A100FF9989 /* Debug */,
+				761CF7792B2563A100FF9989 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
