@@ -16,17 +16,17 @@
 		761CF7432B24372300FF9989 /* Extensions+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761CF7422B24372300FF9989 /* Extensions+UIView.swift */; };
 		761CF7452B24397600FF9989 /* Extensions+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761CF7442B24397600FF9989 /* Extensions+UIColor.swift */; };
 		761CF7512B24610900FF9989 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761CF7502B24610900FF9989 /* APIManager.swift */; };
-		761CF7552B24664900FF9989 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761CF7542B24664900FF9989 /* LoginResponse.swift */; };
 		761CF7572B24677A00FF9989 /* LoginVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761CF7562B24677A00FF9989 /* LoginVM.swift */; };
 		761CF7592B24743500FF9989 /* APIInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761CF7582B24743500FF9989 /* APIInfo.swift */; };
 		761CF75E2B24C60900FF9989 /* StaffListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761CF75D2B24C60900FF9989 /* StaffListView.swift */; };
 		761CF7602B24C62100FF9989 /* StaffListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761CF75F2B24C62100FF9989 /* StaffListVC.swift */; };
 		761CF7622B24C63300FF9989 /* StaffListVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761CF7612B24C63300FF9989 /* StaffListVM.swift */; };
-		761CF7642B24D1A000FF9989 /* StaffListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761CF7632B24D1A000FF9989 /* StaffListResponse.swift */; };
-		761CF7662B25191300FF9989 /* StaffCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761CF7652B25191300FF9989 /* StaffCell.swift */; };
-		761CF76C2B2556C000FF9989 /* LoadMoreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761CF76B2B2556C000FF9989 /* LoadMoreCell.swift */; };
-		761CF77B2B25645700FF9989 /* LoginVMTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761CF77A2B25645700FF9989 /* LoginVMTests.swift */; };
-		761CF77E2B256D0A00FF9989 /* StaffListVMTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761CF77D2B256D0A00FF9989 /* StaffListVMTests.swift */; };
+		76D243C62B29D81E00199DE6 /* StaffListVMTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D243C42B29D81E00199DE6 /* StaffListVMTests.swift */; };
+		76D243C72B29D81E00199DE6 /* LoginVMTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D243C52B29D81E00199DE6 /* LoginVMTests.swift */; };
+		76D243C92B29D8CE00199DE6 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D243C82B29D8CE00199DE6 /* LoginResponse.swift */; };
+		76D243CB2B29D8E100199DE6 /* StaffListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D243CA2B29D8E100199DE6 /* StaffListResponse.swift */; };
+		76D243CE2B29D91900199DE6 /* StaffCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D243CC2B29D91900199DE6 /* StaffCell.swift */; };
+		76D243CF2B29D91900199DE6 /* LoadMoreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D243CD2B29D91900199DE6 /* LoadMoreCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,18 +51,19 @@
 		761CF7422B24372300FF9989 /* Extensions+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+UIView.swift"; sourceTree = "<group>"; };
 		761CF7442B24397600FF9989 /* Extensions+UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+UIColor.swift"; sourceTree = "<group>"; };
 		761CF7502B24610900FF9989 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
-		761CF7542B24664900FF9989 /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
 		761CF7562B24677A00FF9989 /* LoginVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVM.swift; sourceTree = "<group>"; };
 		761CF7582B24743500FF9989 /* APIInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIInfo.swift; sourceTree = "<group>"; };
 		761CF75D2B24C60900FF9989 /* StaffListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaffListView.swift; sourceTree = "<group>"; };
 		761CF75F2B24C62100FF9989 /* StaffListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaffListVC.swift; sourceTree = "<group>"; };
 		761CF7612B24C63300FF9989 /* StaffListVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaffListVM.swift; sourceTree = "<group>"; };
-		761CF7632B24D1A000FF9989 /* StaffListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StaffListResponse.swift; path = ../../../../../../Documents/StaffListResponse.swift; sourceTree = "<group>"; };
-		761CF7652B25191300FF9989 /* StaffCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StaffCell.swift; path = ../../../../../../Documents/StaffCell.swift; sourceTree = "<group>"; };
-		761CF76B2B2556C000FF9989 /* LoadMoreCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoadMoreCell.swift; path = ../../../../../../Documents/LoadMoreCell.swift; sourceTree = "<group>"; };
 		761CF7712B2563A100FF9989 /* SCMPMobileTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SCMPMobileTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		761CF77A2B25645700FF9989 /* LoginVMTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginVMTests.swift; path = ../../../../Documents/LoginVMTests.swift; sourceTree = "<group>"; };
-		761CF77D2B256D0A00FF9989 /* StaffListVMTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StaffListVMTests.swift; path = ../../../../Documents/StaffListVMTests.swift; sourceTree = "<group>"; };
+		76D243C32B29D81D00199DE6 /* SCMPMobileTestTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SCMPMobileTestTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		76D243C42B29D81E00199DE6 /* StaffListVMTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StaffListVMTests.swift; sourceTree = "<group>"; };
+		76D243C52B29D81E00199DE6 /* LoginVMTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVMTests.swift; sourceTree = "<group>"; };
+		76D243C82B29D8CE00199DE6 /* LoginResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
+		76D243CA2B29D8E100199DE6 /* StaffListResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StaffListResponse.swift; sourceTree = "<group>"; };
+		76D243CC2B29D91900199DE6 /* StaffCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StaffCell.swift; sourceTree = "<group>"; };
+		76D243CD2B29D91900199DE6 /* LoadMoreCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadMoreCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,8 +157,8 @@
 		761CF74B2B24609F00FF9989 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				761CF7542B24664900FF9989 /* LoginResponse.swift */,
-				761CF7632B24D1A000FF9989 /* StaffListResponse.swift */,
+				76D243CA2B29D8E100199DE6 /* StaffListResponse.swift */,
+				76D243C82B29D8CE00199DE6 /* LoginResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -183,10 +184,10 @@
 		761CF75C2B24C3D600FF9989 /* StaffList */ = {
 			isa = PBXGroup;
 			children = (
+				76D243CD2B29D91900199DE6 /* LoadMoreCell.swift */,
+				76D243CC2B29D91900199DE6 /* StaffCell.swift */,
 				761CF75D2B24C60900FF9989 /* StaffListView.swift */,
 				761CF75F2B24C62100FF9989 /* StaffListVC.swift */,
-				761CF7652B25191300FF9989 /* StaffCell.swift */,
-				761CF76B2B2556C000FF9989 /* LoadMoreCell.swift */,
 			);
 			path = StaffList;
 			sourceTree = "<group>";
@@ -194,8 +195,9 @@
 		761CF7722B2563A100FF9989 /* SCMPMobileTestTests */ = {
 			isa = PBXGroup;
 			children = (
-				761CF77A2B25645700FF9989 /* LoginVMTests.swift */,
-				761CF77D2B256D0A00FF9989 /* StaffListVMTests.swift */,
+				76D243C52B29D81E00199DE6 /* LoginVMTests.swift */,
+				76D243C42B29D81E00199DE6 /* StaffListVMTests.swift */,
+				76D243C32B29D81D00199DE6 /* SCMPMobileTestTests-Bridging-Header.h */,
 			);
 			path = SCMPMobileTestTests;
 			sourceTree = "<group>";
@@ -253,6 +255,7 @@
 					};
 					761CF7702B2563A100FF9989 = {
 						CreatedOnToolsVersion = 14.3;
+						LastSwiftMigration = 1430;
 						TestTargetID = 761CF7242B242E0600FF9989;
 					};
 				};
@@ -300,13 +303,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				761CF76C2B2556C000FF9989 /* LoadMoreCell.swift in Sources */,
+				76D243CF2B29D91900199DE6 /* LoadMoreCell.swift in Sources */,
+				76D243CB2B29D8E100199DE6 /* StaffListResponse.swift in Sources */,
 				761CF75E2B24C60900FF9989 /* StaffListView.swift in Sources */,
-				761CF7642B24D1A000FF9989 /* StaffListResponse.swift in Sources */,
 				761CF7452B24397600FF9989 /* Extensions+UIColor.swift in Sources */,
 				761CF7292B242E0600FF9989 /* AppDelegate.swift in Sources */,
-				761CF7662B25191300FF9989 /* StaffCell.swift in Sources */,
+				76D243CE2B29D91900199DE6 /* StaffCell.swift in Sources */,
 				761CF7622B24C63300FF9989 /* StaffListVM.swift in Sources */,
+				76D243C92B29D8CE00199DE6 /* LoginResponse.swift in Sources */,
 				761CF7432B24372300FF9989 /* Extensions+UIView.swift in Sources */,
 				761CF73D2B242E4B00FF9989 /* LoginVC.swift in Sources */,
 				761CF7602B24C62100FF9989 /* StaffListVC.swift in Sources */,
@@ -314,7 +318,6 @@
 				761CF7412B24347E00FF9989 /* LoginView.swift in Sources */,
 				761CF7572B24677A00FF9989 /* LoginVM.swift in Sources */,
 				761CF72B2B242E0600FF9989 /* SceneDelegate.swift in Sources */,
-				761CF7552B24664900FF9989 /* LoginResponse.swift in Sources */,
 				761CF7512B24610900FF9989 /* APIManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -323,8 +326,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				761CF77B2B25645700FF9989 /* LoginVMTests.swift in Sources */,
-				761CF77E2B256D0A00FF9989 /* StaffListVMTests.swift in Sources */,
+				76D243C72B29D81E00199DE6 /* LoginVMTests.swift in Sources */,
+				76D243C62B29D81E00199DE6 /* StaffListVMTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -522,6 +525,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -532,6 +536,8 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "SCMPMobileTestTests/SCMPMobileTestTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SCMPMobileTest.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SCMPMobileTest";
@@ -542,6 +548,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -552,6 +559,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "SCMPMobileTestTests/SCMPMobileTestTests-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SCMPMobileTest.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SCMPMobileTest";
