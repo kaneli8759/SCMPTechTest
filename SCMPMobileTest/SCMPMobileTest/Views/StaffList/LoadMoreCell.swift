@@ -16,17 +16,11 @@ class LoadMoreCell: UITableViewCell {
     
     var delegate: LoadMoreCellDelegate?
     
-    let loadMoreButton: UIButton = {
-        let btn = UIButton(type: .custom)
-        btn.setTitle("Load More", for: .normal)
-        btn.setTitleColor(.black, for: .normal)
-        btn.layer.cornerRadius = 5
-        btn.layer.borderWidth = 1
-        btn.layer.borderColor = UIColor("#f0f4c3").cgColor
-        btn.backgroundColor = UIColor("#c0ca33")
-        btn.translatesAutoresizingMaskIntoConstraints = false
-        btn.anchor(width: 200, height: 50)
-        return btn
+    private let loadMoreIndicator: UIActivityIndicatorView = {
+        let indicator = UIActivityIndicatorView(style: .medium)
+        indicator.anchor(width: 50, height: 50)
+        indicator.transform = CGAffineTransform.init(scaleX: 1.5, y: 1.5)
+        return indicator
     }()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -39,13 +33,20 @@ class LoadMoreCell: UITableViewCell {
     }
     
     private func setup() {
-        self.contentView.addSubview(loadMoreButton)
-        self.loadMoreButton.addTarget(self, action: #selector(didClickLoadMoreButton), for: .touchUpInside)
-        self.loadMoreButton.centerXAnchor.constraint(equalTo: self.contentView.centerXAnchor).isActive = true
-        self.loadMoreButton.centerYAnchor.constraint(equalTo: self.contentView.centerYAnchor).isActive = true
+        self.contentView.addSubview(self.loadMoreIndicator)
+        self.loadMoreIndicator.centerXAnchor.constraint(equalTo: self.contentView.centerXAnchor).isActive = true
+        self.loadMoreIndicator.centerYAnchor.constraint(equalTo: self.contentView.centerYAnchor).isActive = true
     }
     
     @objc private func didClickLoadMoreButton() {
         self.delegate?.didClickLoadMore()
+    }
+    
+    func showLoading(status: Bool) {
+        if (status) {
+            self.loadMoreIndicator.startAnimating()
+        }else {
+            self.loadMoreIndicator.stopAnimating()
+        }
     }
 }

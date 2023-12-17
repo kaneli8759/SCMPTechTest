@@ -45,7 +45,12 @@ class LoginVC: UIViewController {
         }
     
     private func isValidPassword(_ password: String) -> Bool {
-        return password.count >= 6 && password.count <= 10 && password.range(of: "[^a-zA-Z0-9]", options: .regularExpression) == nil
+        //  return password.count >= 6 && password.count <= 10 && password.range(of: "[^a-zA-Z0-9]", options: .regularExpression) == nil
+        
+        /// 密碼規則如果要改成英文加數字，不能全英文或全數字
+        let passwordRegrex = "^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{6,10}$"
+        return NSPredicate(format: "SELF MATCHES %@", passwordRegrex).evaluate(with: password)
+
     }
     
 }

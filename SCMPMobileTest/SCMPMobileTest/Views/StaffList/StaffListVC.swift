@@ -63,8 +63,4 @@ extension StaffListVC: StaffListViewDelegate {
     func didClickLoadMore() {
         self.updateStaffList()
     }
-    
-    func refreshTableView() {
-        self.staffListView.refreshTableView()
-    }
 }

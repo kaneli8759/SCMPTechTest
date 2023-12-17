@@ -13,7 +13,6 @@ protocol LoginViewDelegate: AnyObject {
 
 class LoginView: UIView {
     var delegate: LoginViewDelegate?
-    private var isShowPassword: Bool = false
     
     private let titleLabel: UILabel = {
         let lb = UILabel()
@@ -49,6 +48,8 @@ class LoginView: UIView {
     private let eyeButton: UIButton = {
         let btn = UIButton(type: .custom)
         btn.setImage(UIImage(systemName: "eye.fill"), for: .normal)
+        /// 直接在setImage設定 UIControl.State = .seleted的圖片
+        btn.setImage(UIImage(systemName: "eye.slash.fill"), for: .selected)
         btn.tintColor = .black
         btn.translatesAutoresizingMaskIntoConstraints = false
         btn.isUserInteractionEnabled = true
@@ -123,7 +124,7 @@ class LoginView: UIView {
     }
     
     func cleanTextField() {
-        self.emailTextfiled.text = ""
+        /// 改成密碼清空就好，帳號保留
         self.passwordTextField.text = ""
     }
     
@@ -134,10 +135,13 @@ class LoginView: UIView {
     }
     
     @objc private func didClickShowPassword() {
-        self.isShowPassword = !self.isShowPassword
-        let imageStr = self.isShowPassword ? "eye.slash.fill" : "eye.fill"
-        self.eyeButton.setImage(UIImage(systemName: imageStr), for: .normal)
-        self.passwordTextField.isSecureTextEntry = !self.isShowPassword
+        /// 按鈕顯示改成用isSelected
+        self.eyeButton.isSelected = !self.eyeButton.isSelected
+        self.passwordTextField.isSecureTextEntry = !self.eyeButton.isSelected
+//        self.isShowPassword = !self.isShowPassword
+//        let imageStr = self.isShowPassword ? "eye.slash.fill" : "eye.fill"
+//        self.eyeButton.setImage(UIImage(systemName: imageStr), for: .normal)
+//        self.passwordTextField.isSecureTextEntry = !self.isShowPassword
     }
     
 }
